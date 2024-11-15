@@ -2,86 +2,264 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
     font-family: sans-serif;
 }
-.hero{
-    width: 100%;
-    min-height: 100vh;
-    background: linear-gradient(45deg, #08001f,#30197d);
-    color: white;
-    position: relative;
-
+body{
+    background-color: black;
+    font: #fff;
+    font-family: sans-serif;
 }
-
-.container{
-    width: 800px;
-    height: 180px;
+.header{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url(./images/header-image.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 10px 8px;
+    position: relative;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 50px;
+}
+.logo{
+    width: 150px;
+    cursor: pointer;
+}
+nav button{
+    border: 0;
+    outline: 0;
+    background: #db0001;
+    color: #fff;
+    padding: 7px 20px;
+    font-size: 12px;
+    border-radius: 4px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+.language_btn{
+    display: inline-block;
+    align-items: center;
+    background: transparent;
+   border: 1px solid white;
+    padding: 7px 10px;
+}
+.language_btn img{
+    width: 10px;
+    margin-left: 10px;
+}
+.header_content{
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    
+    color: white;
+    text-align: center;
+    margin-top: 100px;
 }
-.clock{
-    width: 100%;
-    height: 100%;
-    background: rgba(235, 0, 235, 0.11);
-    border-radius: 10px;
+.header_content h1{
+    font-size: 60px;
+
+    line-height: 70px;
+    max-width: 650px;
+  
+}
+.header_content h3{
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+.email_saginup{
+    background: #fff;
+    border-radius: 4px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    backdrop-filter: blur(40px);
+    margin-top: 30px;
+    overflow: hidden;
 }
-
-.container::before{
-
-    content: '';
-    width: 180px;
-    height: 180px;
-    background-color: #f41b75;
-    border-radius: 5px;
-    position: absolute;
-    left: -50px;
-    top: -50px;
-    z-index: -1;
-
+.email_saginup input{
+    border: 0;
+    outline: 0;
+    flex: 1;
+    margin-left: 30px;
 }
-.container::after{
-
-    content: '';
-    width: 180px;
-    height: 180px;
-    background-color: #419ffa;
-    border-radius: 50%;
-    position: absolute;
-    left: 700px;
-    top: 50px;
-    z-index: -1;
-
-}
-
-.clock span{
-    font-size: 80px;
-    width: 110px;
-    position: relative;
-    text-align: center;
-}
-.clock span::after{
-  
+.email_saginup button{
+    background: #db0001;
+    border: 0;
+    outline: 0;
+    color: #fff;
     font-size: 16px;
+    cursor: pointer;
+    padding: 15px 30px;
+}
+h2,p{
+   color: white;
+   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.features{
+    font-size: 22px;
+    padding: 50px 12%;
+    color width: ;
+  
+}
+.raw{
+    display: flex;
     align-items: center;
-    position: absolute;
-    bottom: -5px;
-    left: 50%;
-    transform: translate(-50%);
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 50px 0;
+   
+}
+.text_col{
+    flex-basis: 50%;
+    margin-bottom: 20px;
+    
+}
+.imgc_col{
+    flex-basis: 50%;
+    margin-bottom: 20px;
 
 }
-#hor::after{
-    content: 'Hour';
+.imgc_col img{
+    display: block;
+    margin: auto;
+    width: 90%;
 }
-#min::after{
-    content: 'Minute';
+
+.faq{
+    padding: 10px 12% ;
+    text-align: center;
+    font-size: 18px;
+
 }
-#sec::after{
-    content: 'Second';
+.faq h2{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #db0001;
+}
+.accordion{
+    color: white;
+    margin: 60px auto;
+    width: 100%;
+    max-width: 750px;
+
+}
+.accordion li{
+list-style: none;
+padding: 9px;
+width: 100%;
+}
+
+.accordion li label{
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    font-size: 18px;
+    background: #303030;
+    margin-bottom: 2px;
+    cursor: pointer;
+    position: relative;
+}
+
+label::after{
+    content: '+';
+    font-size: 34px;
+    position: absolute;
+    right: 20px;
+    transition: transform 0.5s;
+}
+input[type="radio"]{
+    display: none;
+}
+
+.accordion .content{
+    background: #303030;
+    text-align: left;
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s, padding 0.5s;
+}
+.accordion input[type="radio"]:checked + label + .content{
+    max-height: 600px;
+    padding: 30px 20px;
+}
+.accordion input[type="radio"]:checked + label::after{
+    transform: rotate(135deg);
+}
+
+.faq .email_saginup{
+    max-width: 600px;
+    margin: 20px auto 600px;
+}
+.faq small{
+    font-size: 13px;
+    color: wheat;
+}
+
+.footer{
+    padding: 50px 15% 10px;
+    border-top: 2px solid #333;
+    color: #777;
+}
+.footer h2{
+    color: #777;
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+
+.footer .col a{
+    display: flex;
+    text-decoration: none;
+    color: #333;
+  padding: 5px;
+}
+
+@media only screen and (max-width: 600px) {
+    .logo{
+        width: 100px;
+    
+    }
+    nav button{
+        padding: 5px 10px;
+       margin-left: 50px;
+    }
+.header_content {
+    position: unset;
+    transform: none;
+    padding-top: 150px;
+}
+.header_content h1{
+    font-size: 30px;
+}
+.email_saginup button {
+    font-size: 12px;
+    padding: 10px 15px;
+}
+.text_col, .imgc_col{
+    flex-basis: 100%;
+}
+.features h2{
+    font-size: 30px;
+}
+.features p {
+    font-size: 15px;
+}
+.raw:nth-child(2), .raw:nth-child(4){
+    flex-direction: column-reverse;
+}
+.features .raw{
+    padding: 10px 0;
+}
+.faq h2{
+    font-size: 20px;
+}
+.accordion li label{
+    padding: 10px;
+    font-size: 14px;
+}
 }
