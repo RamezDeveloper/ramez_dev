@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./app.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body>
+    
+
+
+
+<div class="hero">
+    <div class="container">
+        <div class="clock">
+           <span id="hor">00</span>
+           <span>:</span>
+           <span id="min">00</span>
+           <span>:</span>
+           <span id="sec">00</span>
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+
+    let hor = document.getElementById("hor");
+    let min = document.getElementById("min");
+    let sec = document.getElementById("sec");
+
+
+    setInterval(()=>{
+        let currentTime = new Date();
+
+        hor.innerHTML = (currentTime.getHours()<10?"0":"") + currentTime.getHours();
+        min.innerHTML = (currentTime.getMinutes()<10?"0":"") + currentTime.getMinutes();
+        sec.innerHTML = (currentTime.getSeconds()<10?"0":"") + currentTime.getSeconds();
+
+    },1000)
+
+
+
+</script>
+</body>
+</html>
